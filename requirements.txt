@@ -62,4 +62,3 @@ urllib3==2.2.1
 wcwidth==0.2.13
 Werkzeug==3.0.3
 wsproto==1.2.0
-gunicorn
