@@ -1,0 +1,139 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  /* background-color: #b4ffdf; */
+  /* background-image: url("/static/background.jpg"); */
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #ffe604; /* Background warna, sesuaikan dengan kebutuhan */
+  color: #ff0019; /* Warna teks, sesuaikan dengan kebutuhan */
+  padding: 10px 0; /* Padding untuk teks */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow untuk efek */
+  position: fixed; /* Agar berada di posisi tetap di atas */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Agar berada di atas konten lainnya */
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite; /* Kecepatan dan siklus animasi */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.container {
+  padding: 20px;
+  max-height: 100vh;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 8px 8px 16px #b5b5b5, -8px -8px 16px #ffffff;
+}
+
+button {
+  padding: 20px 15px;
+  background-color: #7e57c2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  background: #ffffff;
+  box-shadow: 8px 8px 16px #b5b5b5, -8px -8px 16px #ffffff;
+}
+
+button:hover {
+  background-color: #006368;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  button {
+    width: auto;
+    padding: 10px 20px;
+  }
+
+  .download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #7e57c2;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 8px 8px 16px #b5b5b5, -8px -8px 16px #ffffff;
+  }
+
+  .download-button:hover {
+    background-color: #2d004b;
+  }
+}

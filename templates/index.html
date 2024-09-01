@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Scraping App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='icon.jpeg') }}" type="image/png" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("{{ url_for('static', filename='background.png') }}");
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input,
+      button {
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        background-color: #7e57c2;
+        box-shadow: 8px 8px 16px #b5b5b5, -8px -8px 16px #ffffff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #2d004b;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin: 5px 0;
+      }
+      a {
+        text-decoration: none;
+        color: #007bff;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .flash {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+      .flash-success {
+        background-color: #d4edda;
+        color: #155724;
+      }
+      .flash-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+
+      .image {
+        display: flex;
+        justify-content: center;
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <marquee behavior="" direction="">
+        <div class="warning-content">Perhatian: Penggunaan web scraping harus mematuhi ketentuan layanan situs web dan hukum yang berlaku. Pastikan untuk tidak membebani server dan menghormati privasi data.</div>
+      </marquee>
+      <h1>Web Scrapping Transaksi <br />TOKODARING</h1>
+      <div class="image">
+        <img src="{{ url_for('static', filename='imgScrapp.png') }}" alt="image" />
+      </div>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+      <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+      <form action="{{ url_for('scrape') }}" method="post">
+        <label for="url">Masukkan URL Web:</label>
+        <input type="text" id="url" name="url" required />
+        <label for="output_filename">Masukkan Nama File :</label>
+        <input type="text" id="output_filename" name="output_filename" required />
+        <button type="submit">Ambil Data</button>
+      </form>
+
+      <h2>Download File Anda</h2>
+      {% if filename %}
+      <a href="{{ url_for('download') }}" class="download-button">Unduh File</a>
+      {% endif %}
+    </div>
+  </body>
+</html>
