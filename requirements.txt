@@ -55,6 +55,7 @@ Pygments==2.18.0
 PySocks==1.7.1
 python-dateutil==2.9.0.post0
 pytz==2024.1
+pywin32==306
 pyzmq==26.0.3
 referencing==0.35.1
 requests==2.32.3
@@ -80,5 +81,5 @@ tzdata==2024.1
 urllib3==2.2.1
 watchdog==4.0.2
 wcwidth==0.2.13
-Werkzeug==3.0.3
+Werkzeug==3.0.4
 wsproto==1.2.0
